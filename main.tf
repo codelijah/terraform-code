@@ -104,7 +104,7 @@ resource "aws_eip" "code_ip" {
 
 resource "aws_key_pair" "docker_site" {
   key_name   = "docker-site-key"
-  public_key = file("~/.ssh/docker-site-key.pub")
+  public_key = file("${path.module}/keys/docker-site-key.pub")
 }
 
 resource "aws_sns_topic" "alert" {
